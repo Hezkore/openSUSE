@@ -30,6 +30,11 @@ Uncomment it and change it to:
 autoAgreeWithLicenses = yes
 ```
 
+## Ignore RPM Integrity Checks
+
+99% of all the RPM packages out there will fail the integrity checks, because they are not signed with the GPG key of the openSUSE project.\
+So let's just disable the damn thing:
+
 ## NVidia Kernel Module
 
 After install, the `nouveau` kernel module will be loaded, which is fine for AMD GPUs, but for NVidia GPUs you will want to install the proprietary NVidia driver.
@@ -61,6 +66,24 @@ sudo zypper refresh
 sudo zypper dist-upgrade --from packman --allow-vendor-change
 sudo zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec vlc-codecs
 ```
+
+## Wine
+
+A lot of times Wine itself is good enough for Windows applications, and you won't need Proton or anything fancy:
+```bash
+sudo zypper install wine
+```
+
+Make sure we have a prefix ready:
+```bash
+wine start cmd /c exit
+```
+
+Associate Wine with `.exe` files:
+```bash
+xdg-mime default wine.desktop application/x-ms-dos-executable
+```
+
 ## Universal Linux Packaging Formats
 
 While the preferred way of installing application is via the software repositories, sometimes I want to install applications that are not available there.\
