@@ -73,6 +73,12 @@ xfconf-query -c xsettings -p /Net/IconThemeName -s "Vimix-dark"
 gsettings set org.gnome.desktop.interface icon-theme "Vimix-dark"
 ```
 
+Some cleanup:
+```bash
+sudo gtk-update-icon-cache /usr/share/icons/Vimix-dark
+sudo rm -rf /tmp/Vimix
+```
+
 ## Window Tweaks
 
 ### Buttons
@@ -80,4 +86,11 @@ gsettings set org.gnome.desktop.interface icon-theme "Vimix-dark"
 I don't need to see the application icon, nor the maximize button, so we'll remove those from the title bar:
 ```bash
 xfconf-query -c xfwm4 -p /general/button_layout -s "|HC"
+```
+
+### Center huge windows
+---
+I like when very large windows are centered, mostly because Firefox and its derivatives have a tendency to not restore its old position:
+```bash
+xfconf-query -c xfwm4 -p /general/placement_ratio -s 40
 ```

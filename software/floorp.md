@@ -39,3 +39,7 @@ Exec=/opt/floorp/floorp --private-window %u
 Name=Open the Profile Manager
 Exec=/opt/floorp/floorp --ProfileManager
 ```
+4. Set Floorp as the default browser:
+```bash
+xdg-settings set default-web-browser floorp.desktop
+```
