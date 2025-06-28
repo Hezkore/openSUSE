@@ -94,3 +94,28 @@ I like when very large windows are centered, mostly because Firefox and its deri
 ```bash
 xfconf-query -c xfwm4 -p /general/placement_ratio -s 40
 ```
+
+### Disable Scroll Focus
+---
+Sometimes I just want to scroll in a window without giving it focus:
+```bash
+xfconf-query -c xfwm4 -p /general/raise_with_any_button -s false
+```
+
+### Disable Roll up
+---
+```bash
+xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
+```
+
+### Diable Workspace Scrolling
+---
+```bash
+xfconf-query -c xfwm4 -p /general/scroll_workspaces -s false
+```
+
+### Disable Sub-pixel Order
+---
+```bash
+xfconf-query -c xsettings -p /Xft/RGBA -s none
+```
