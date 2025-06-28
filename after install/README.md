@@ -1,12 +1,15 @@
 # After Initial Install
 
+These are some of the things I think are objectively a good idea to do after installing openSUSE Tumbleweed as a regular desktop user.
+
 ## Root Password
 
-If the root password was not set during the install, you can set it now:
+If you ever run into issues with some applications not accepting your password (YaST, for example) it's because they are asking for the Root password, which can be skipped during installation.
+
+So if the root password was not set during the install, you can set it now:
 ```bash
 sudo passwd root
 ```
-
 
 ## Auto Agree With Licenses
 
@@ -15,6 +18,7 @@ It's not like we have a choice anyway, so let's just agree to all licenses autom
 ```bash
 sudo vim /etc/zypp/zypp.conf
 ```
+(or `nano` if `vim` is too confusing)
 
 Find the line:
 ```bash
@@ -57,3 +61,43 @@ sudo zypper refresh
 sudo zypper dist-upgrade --from packman --allow-vendor-change
 sudo zypper install --from packman ffmpeg gstreamer-plugins-{good,bad,ugly,libav} libavcodec vlc-codecs
 ```
+## Universal Linux Packaging Formats
+
+While the preferred way of installing application is via the software repositories, sometimes I want to install applications that are not available there.\
+Adding a third-party repository is my main way of doing this, but sometimes the only option is to use a universal packaging format like Snap, Flatpak, or AppImage.
+
+The preferred order of packing formats is:
+
+1. **AppImage** - It's a self-contained executable that doesn't require any additional dependencies and starts quickly.
+2. **Flatpak** - It's a containerized format that requires the Flatpak runtime, and is generally slower than AppImage.
+3. **Snap** - It's the slowest of the three and has a lot of issues with permissions and sandboxing.\
+I don't even bother installing it.
+
+### AppImage
+---
+To setup AppImage support we don't really have to do anything, but AppImageLauncher makes things a lot easier by moving them to a designated directory and creating desktop entries for them.
+
+Install the x86_64.rpm from their [GitHub releases page](https://github.com/TheAssassin/AppImageLauncher/releases).
+
+Once installed, I start the application and set the path for where the AppImage files are stored to:
+```bash
+~/.applications
+```
+
+### Flatpak
+---
+Flatpak requires the Flatpak runtime to be installed, which is available in the software repositories.
+
+Install it with:
+```bash
+sudo zypper install flatpak
+```
+
+## Node.js NPM
+
+Unfortunately, a lot of things require Node.js and NPM to be installed, so we might as well install them.
+
+```bash
+sudo zypper install npm
+```
+Do note that `npm` is an alias for the latest npm version in the repositories, and will also install `nodejs`.
