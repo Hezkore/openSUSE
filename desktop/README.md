@@ -105,24 +105,28 @@ xfconf-query -c xfwm4 -p /general/raise_with_any_button -s false
 
 ### Disable Roll up
 ---
+Disable the feature where using the scroll wheel on a window title bar rolls it up or down:
 ```bash
 xfconf-query -c xfwm4 -p /general/mousewheel_rollup -s false
 ```
 
-### Diable Workspace Scrolling
+### Disable Workspace Scrolling
 ---
+Disable the feature where using the scroll wheel on the desktop switches workspaces:
 ```bash
 xfconf-query -c xfwm4 -p /general/scroll_workspaces -s false
 ```
 
 ### Disable Sub-pixel Order
 ---
+Disable the sub-pixel order on fonts, removing the ugly colored edges:
 ```bash
 xfconf-query -c xsettings -p /Xft/RGBA -s none
 ```
 
 ### Force DPI
 ---
+Force a consistent DPI across the system, making every application render at the same scale:
 ```bash
 xfconf-query -c xsettings -p /Xft/DPI -s 96
 ```
