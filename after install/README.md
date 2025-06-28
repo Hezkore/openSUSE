@@ -32,8 +32,11 @@ autoAgreeWithLicenses = yes
 
 ## Ignore RPM Integrity Checks
 
-99% of all the RPM packages out there will fail the integrity checks, because they are not signed with the GPG key of the openSUSE project.\
-So let's just disable the damn thing:
+99% of all the RPM packages out there will fail the integrity checks.\
+So let's just disable the damn thing by adding `gpgcheck=0` to `/etc/zypp/zypp.conf`:
+```bash
+echo "gpgcheck=0" | sudo tee -a /etc/zypp/zypp.conf
+```
 
 ## NVidia Kernel Module
 
