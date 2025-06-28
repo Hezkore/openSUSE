@@ -53,6 +53,7 @@ We can update the Dracula at any point now by calling:
 ```bash
 sudo git -C /usr/share/themes/Dracula pull
 ```
+(check their [GitHub repo](https://github.com/dracula/gtk) to see updates)
 
 ### Vimix Icons
 ---
@@ -79,7 +80,7 @@ sudo gtk-update-icon-cache /usr/share/icons/Vimix-dark
 sudo rm -rf /tmp/Vimix
 ```
 
-## Window Tweaks
+## Desktop Settings
 
 ### Buttons
 ---
@@ -118,4 +119,10 @@ xfconf-query -c xfwm4 -p /general/scroll_workspaces -s false
 ---
 ```bash
 xfconf-query -c xsettings -p /Xft/RGBA -s none
+```
+
+### Force DPI
+---
+```bash
+xfconf-query -c xsettings -p /Xft/DPI -s 96
 ```
