@@ -38,3 +38,29 @@ If you want a quick tour and introduction to the D language, the [D Language Tou
 If you just want to study the syntax, you can check out the [D Language Reference](https://dlang.org/spec).
 
 And for more information about standard library (awesomely named _Phobos_), check out the [D Language Library Reference](https://dlang.org/phobos/).
+
+## Raylib
+
+I mostly use Raylib with D, which is fairly simple to set up for a new project.
+
+For a new project, you can just run `dub init` like always, and then when it asks `Add dependency` you can just type `raylib-d` to get the latest version.
+
+If you already have a project and want to add Raylib to it, just call:
+```bash
+dub add raylib-d
+```
+
+Once it's added as a dependency, you can download the wrapper library by running:
+```bash
+dub upgrade
+```
+
+And to actually get Raylib itself, you can use the install script that comes with raylib-d:
+```bash
+dub run raylib-d:install
+```
+
+And that's about it!
+
+Here's a simple [Hello World example](https://raw.githubusercontent.com/schveiguy/raylib-d/refs/heads/master/example/source/app.d).\
+And here are some of the [Raylib examples in D](https://github.com/schveiguy/raylib-d_examples).
