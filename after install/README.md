@@ -127,3 +127,11 @@ Unfortunately, a lot of things require Node.js and NPM to be installed, so we mi
 sudo zypper install npm
 ```
 Do note that `npm` is an alias for the latest npm version in the repositories, and will also install `nodejs`.
+
+## Development Essentials
+
+Even if you don't plan on doing any development, it's a good idea to have the development essentials installed so that you can grab the source code of any application and compile it if needed.
+
+```bash
+sudo zypper install -t pattern devel_basis
+```

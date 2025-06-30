@@ -43,3 +43,21 @@ Exec=/opt/floorp/floorp --ProfileManager
 ```bash
 xdg-settings set default-web-browser floorp.desktop
 ```
+
+## prefs.js
+
+Floorp is good and all, but weirdly configured by default.\
+Add this to the end of the `prefs.js` file located at `~/.floorp/<profile directory>`:
+```javascript
+user_pref("general.smoothScroll.currentVelocityWeighting", "0.25");
+user_pref("general.smoothScroll.mouseWheel.durationMinMS", 50);
+user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 120);
+user_pref("general.smoothScroll.msdPhysics.enabled", false);
+user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 1250);
+user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 1000);
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 12);
+user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 2000);
+user_pref("general.smoothScroll.stopDecelerationWeighting", "0.4");
+user_pref("mousewheel.default.delta_multiplier_y", 100);
+user_pref("floorp.browser.sidebar.is.displayed", false);
+```
