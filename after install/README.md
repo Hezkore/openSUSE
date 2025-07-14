@@ -134,5 +134,5 @@ Even if you don't plan on doing any development, it's a good idea to have the de
 
 ```bash
 sudo zypper install -t pattern devel_basis
-sudo zypper install dkms
+sudo zypper install dkms kernel-default-devel
 ```
