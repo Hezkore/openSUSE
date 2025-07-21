@@ -14,7 +14,7 @@ And you can install it with:
 sudo zypper install opi
 ```
 
-You can install things using it with: `opi <name>`\
+You can install things using it with: `sudo opi <name>`\
 And I will be using it further down with the `-n` flag to bypass and user confirmation prompts.
 
 ## Root Password
@@ -96,7 +96,7 @@ https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny
 
 The easiest way to install the proprietary media codecs is to simply install `opi`.\
 ```bash
-opi -n codecs
+sudp opi -n codecs
 ```
 
 Don't forget to reboot!
@@ -191,7 +191,7 @@ It also tells us how much battery is left in the controller on any deskop enviro
 I recommend unplugging any Xbox hardware (controller, receiver etc.).\
 Then install via opi:
 ```
-opi -n xone
+sudo opi -n xone
 ```
 
 Then you can plugin the receiver again and hold down the button to start syncing.\
