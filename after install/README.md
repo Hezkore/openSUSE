@@ -40,22 +40,39 @@ echo "gpgcheck=0" | sudo tee -a /etc/zypp/zypp.conf
 
 ## NVidia Kernel Module
 
-After install, the `nouveau` kernel module will be loaded, which is fine for AMD GPUs, but for NVidia GPUs you will want to install the proprietary NVidia driver.
+You can always check which GPU module (driver) is in use by running the command:
+```bash
+inxi -G
+```
+After install, the `nouveau` kernel module will be loaded.\
+Fine for some cards, but with newer NVidia GPUs you will want to install the proprietary NVidia driver.
 
-First we add the repository:
+Did you select the "non-free repos" during install?\
+If you are unsure, run:
+```bash
+zypper repos --details
+```
+And if any of listed repos starts with the URI `https://download.nvidia.com/opensuse/` then we're good.\
+Otherwise, we add the repository:
 ```bash
 sudo zypper install openSUSE-repos-Tumbleweed-NVIDIA
 ```
 
 Then we install the driver based on what's recommended:
-
 ```bash
 sudo zypper install-new-recommends --repo repo-non-free
+```
+Then reboot.
+
+Make sure `inxi -G` says something like "gpu: nvidia".\
+If it doesn't, you can try to manually install everything we need.
+```bash
+sudo zypper install nvidia-common-G06 nvidia-compute-G06 nvidia-compute-G06-32bit nvidia-compute-utils-G06 nvidia-gl-G06 nvidia-gl-G06-32bit nvidia-libXNVCtrl nvidia-modprobe nvidia-open-driver-G06-signed-kmp-default nvidia-persistenced nvidia-userspace-meta-G06 nvidia-video-G06 nvidia-video-G06-32bit
 ```
 
 ## Media Codec Support
 
-The default ones are open-source and don't quite handle H.264 and H.265 all that well.
+The default ones are open-source and don't quite handle H.264 and H.265 all that well.\
 The proprietary ones are available in the `packman` repository, which is not enabled by default for legal reasons.
 
 Add the Tumbleweed `packman` repository:
