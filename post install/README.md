@@ -72,10 +72,23 @@ sudo zypper install nvidia-common-G06 nvidia-compute-G06 nvidia-compute-G06-32bi
 
 ## Media Codec Support
 
-The default ones are open-source and don't quite handle H.264 and H.265 all that well.\
+The default media codecs are open-source and don't quite handle H.264 and H.265 all that well.\
 The proprietary ones are available in the `packman` repository, which is not enabled by default for legal reasons.
 
-Add the Tumbleweed `packman` repository:
+You can check if H.264 codecs are supported by visiting this link:
+https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_200kbps_360p_60.0fps_h264.mp4
+
+The easiest way is to simply install `opi` which gives us access to the entire SUSE Open Build Service (OBS) and the `packman` repo as well:
+```bash
+sudo zypper install opi
+```
+
+Then we can install the media codecs with:
+```bash
+opi -n codecs
+```
+
+For a more manual method, or if anything goes wrong, you can do add the Tumbleweed `packman` repository:
 ```bash
 sudo zypper addrepo -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' packman
 ```
