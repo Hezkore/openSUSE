@@ -5,8 +5,8 @@ These are some of the things I think are objectively a good idea to do after ins
 
 ## SUSE Open Build Service (OBS) & Packman
 
-The SUSE Open Build Service (OBS) is a great way to install applications that are not available in the official repositories.\
-And Packman is a community repository that provides additional software packages, including proprietary codecs and applications.
+The [SUSE Open Build Service (OBS)](https://build.opensuse.org/) is a great way to install applications that are not available in the official repositories.\
+And [Packman](https://en.opensuse.org/Additional_package_repositories#Packman) is a community repository that provides additional software packages, including proprietary codecs and applications.
 
 The application `opi` lets us easily search and install packages from the OBS and Packman repositories.\
 And you can install it with:
@@ -14,14 +14,15 @@ And you can install it with:
 sudo zypper install opi
 ```
 
-You can install things with: `opi <name>`\
+You can install things using it with: `opi <name>`\
 And I will be using it further down with the `-n` flag to bypass and user confirmation prompts.
 
 ## Root Password
 
-If you ever run into issues with some applications not accepting your password (YaST, for example) it's because they are asking for the Root password, which can be skipped during installation.
+If you ever run into issues with some applications not accepting your password (YaST, for example) it's because they are asking for the Root password.\
+And if no root password was set during install, you simply cannot use the application.
 
-So if the root password was not set during the install, you can set it now:
+So if the root password was never set, you can set it now:
 ```bash
 sudo passwd root
 ```
