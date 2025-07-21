@@ -2,6 +2,21 @@
 
 These are some of the things I think are objectively a good idea to do after installing openSUSE Tumbleweed as a regular desktop user.
 
+
+## SUSE Open Build Service (OBS) & Packman
+
+The SUSE Open Build Service (OBS) is a great way to install applications that are not available in the official repositories.\
+And Packman is a community repository that provides additional software packages, including proprietary codecs and applications.
+
+The application `opi` lets us easily search and install packages from the OBS and Packman repositories.\
+And you can install it with:
+```bash
+sudo zypper install opi
+```
+
+You can install things with: `opi <name>`\
+And I will be using it further down with the `-n` flag to bypass and user confirmation prompts.
+
 ## Root Password
 
 If you ever run into issues with some applications not accepting your password (YaST, for example) it's because they are asking for the Root password, which can be skipped during installation.
@@ -79,12 +94,6 @@ You can check if H.264 codecs are supported by visiting this link:
 https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_200kbps_360p_60.0fps_h264.mp4
 
 The easiest way to install the proprietary media codecs is to simply install `opi`.\
-`opi` gives us access to the entire SUSE Open Build Service (OBS) and the `packman` repo as well:
-```bash
-sudo zypper install opi
-```
-
-Then we can install the media codecs with:
 ```bash
 opi -n codecs
 ```
@@ -169,3 +178,17 @@ Even if you don't plan on doing any development, it's a good idea to have the de
 sudo zypper install -t pattern devel_basis
 sudo zypper install dkms kernel-default-devel
 ```
+
+## Xbox Controller Support
+
+The Xbox controller, and most other gamepads just magically works.\
+But the Microsoft Xbox Reciver is another story since it requires a Microsoft firmware to properly work.
+
+[xone](https://github.com/dlundqvist/xone) fixes all this.\
+It also tells us how much batter is left in the controller on any deskop environment.
+
+It's easily installed via opi:
+```
+opi -n xone
+```
+
