@@ -78,7 +78,8 @@ The proprietary ones are available in the `packman` repository, which is not ena
 You can check if H.264 codecs are supported by visiting this link:
 https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_200kbps_360p_60.0fps_h264.mp4
 
-The easiest way is to simply install `opi` which gives us access to the entire SUSE Open Build Service (OBS) and the `packman` repo as well:
+The easiest way to install the proprietary media codecs is to simply install `opi`.\
+`opi` gives us access to the entire SUSE Open Build Service (OBS) and the `packman` repo as well:
 ```bash
 sudo zypper install opi
 ```
