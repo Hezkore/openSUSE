@@ -182,14 +182,17 @@ sudo zypper install dkms kernel-default-devel
 
 ## Xbox Controller Support
 
-The Xbox controller, and most other gamepads just magically works.\
-But the Microsoft Xbox Reciver is another story since it requires a Microsoft firmware to properly work.
+The Xbox controller, and most other gamepads, just magically works.\
+But the Microsoft Xbox Receiver is another story since it requires a Microsoft firmware to properly work.
 
 [xone](https://github.com/dlundqvist/xone) fixes all this.\
-It also tells us how much batter is left in the controller on any deskop environment.
+It also tells us how much battery is left in the controller on any deskop environment.
 
-It's easily installed via opi:
+I recommend unplugging any Xbox hardware (controller, receiver etc.).\
+Then install via opi:
 ```
 opi -n xone
 ```
 
+Then you can plugin the receiver again and hold down the button to start syncing.\
+Then starting the Xbox controll and syncing it as well.
