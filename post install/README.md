@@ -52,7 +52,7 @@ If you are unsure, run:
 ```bash
 zypper repos --details
 ```
-And if any of listed repos starts with the URI `https://download.nvidia.com/opensuse/` then we're good.\
+And if any of the listed repos starts with the URI `https://download.nvidia.com/opensuse/` then we're good.\
 Otherwise, we add the repository:
 ```bash
 sudo zypper install openSUSE-repos-Tumbleweed-NVIDIA
