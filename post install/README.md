@@ -88,6 +88,8 @@ Then we can install the media codecs with:
 opi -n codecs
 ```
 
+Don't forget to reboot!
+
 For a more manual method, or if anything goes wrong, you can do add the Tumbleweed `packman` repository:
 ```bash
 sudo zypper addrepo -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/' packman
