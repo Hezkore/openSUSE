@@ -92,4 +92,4 @@ There are some other annoying things that we can fix, like the workspace switche
 But these are a bit more involved, so you can simple right click things on the toolbar and select "Remove from Toolbar" to get rid of them.
 
 I also recommend signing in by clicking the profile icon in the top right corner, and signing in with Firefox Sync.\
-This syncs all your plugins, like Bitwarden and uBlock Origin.
+This syncs all your plugins, like Bitwarden and uBlock Origin, but also tabs, bookmarks, and history across any Firefox-based browser, including Firefox on mobile.
