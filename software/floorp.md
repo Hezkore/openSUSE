@@ -1,14 +1,22 @@
 # Floorp Browser
 
-Floorp is just a modified version of Firefox with additional features and customizations.\
-I mainly use it because it syncs with Firefox Sync and launches a lot faster than Firefox itself.
+Floorp is just a modified version of Firefox, with additional features and customizations.\
+I mainly use it because it syncs with Firefox Sync and launches *a lot* faster than Firefox itself.
 
-Floorp is not available in the package repositories, so I do the following:
+Floorp is not available in the package repositories, so we have two options.
+
+The simplest is via `opi`.\
+However, I'm not sure how well auto-updates work that version:
+```bash
+sudo opi -n floorp-browser
+```
+
+A method that I know works, and will auto-update itself is:
 
 1. Download Linux (x86_64) from the [Floorp releases page](https://floorp.app/download)
 2. Extract to `/opt/`
 ```bash
-sudo tar -xjf /home/hezkore/Downloads/floorp-*.tar.bz2 -C /opt/
+sudo tar -xjf ~/Downloads/floorp-*.tar.bz2 -C /opt/
 ```
 3. Create `~/.local/share/applications/floorp.desktop` and add the following content:
 ```ini
@@ -46,8 +54,17 @@ xdg-settings set default-web-browser floorp.desktop
 
 ## prefs.js
 
-Floorp is good and all, but weirdly configured by default.\
-Add this to the end of the `prefs.js` file located at `~/.floorp/<profile directory>`:
+No matter how we installed Floorp, it is weirdly configured by default.\
+You can go through Floorp and try and find all of the things to change.\
+Or we can simply add some things to `prefs.js` to instantly fix some of the things.
+
+
+First, start Floorp once, then close it and make sure Floorp isn't running somewhere else.\
+Then navigate to `~/.floorp/<profile directory>`.\
+`<profile directory>` is usually a bunch of numbers ending with `default-release`.\
+Find the `prefs.js` file in that directory.
+
+Add this to the end of the `prefs.js` file:
 ```javascript
 user_pref("general.smoothScroll.currentVelocityWeighting", "0.25");
 user_pref("general.smoothScroll.mouseWheel.durationMinMS", 50);
@@ -59,5 +76,7 @@ user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 12);
 user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 2000);
 user_pref("general.smoothScroll.stopDecelerationWeighting", "0.4");
 user_pref("mousewheel.default.delta_multiplier_y", 100);
+user_pref("floorp.browser.sidebar.enable", false);
 user_pref("floorp.browser.sidebar.is.displayed", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 ```
