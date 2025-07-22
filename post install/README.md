@@ -226,7 +226,7 @@ But the Microsoft Xbox Receiver is another story since it requires a Microsoft f
 It also tells us how much battery is left in the controller on any deskop environment.
 
 I recommend unplugging any Xbox hardware (controller, receiver etc.).\
-Then install via opi:
+Then installing it via `opi`:
 ```
 sudo opi -n xone
 ```
