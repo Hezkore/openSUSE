@@ -68,6 +68,15 @@ Find the `prefs.js` file in that directory.
 
 Add this to the end of the `prefs.js` file:
 ```javascript
+// Disable all sidebars
+user_pref("floorp.browser.sidebar.enable", false);
+user_pref("floorp.browser.sidebar.is.displayed", false);
+// Disable the sponsored site suggestions
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+// Disable password saving
+user_pref("signon.rememberSignons", false);
+// Fix the wonky mouse scrolling
+user_pref("mousewheel.default.delta_multiplier_y", 100);
 user_pref("general.smoothScroll.currentVelocityWeighting", "0.25");
 user_pref("general.smoothScroll.mouseWheel.durationMinMS", 50);
 user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 120);
@@ -77,8 +86,4 @@ user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 1000);
 user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 12);
 user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 2000);
 user_pref("general.smoothScroll.stopDecelerationWeighting", "0.4");
-user_pref("mousewheel.default.delta_multiplier_y", 100);
-user_pref("floorp.browser.sidebar.enable", false);
-user_pref("floorp.browser.sidebar.is.displayed", false);
-user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 ```
