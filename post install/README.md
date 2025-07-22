@@ -231,5 +231,7 @@ Then installing it via `opi`:
 sudo opi -n xone
 ```
 
+Make sure to reboot once it's installed!
+
 Then you can plugin the receiver again and hold down the button to start syncing.\
 Then starting the Xbox controll and syncing it as well.
