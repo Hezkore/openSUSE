@@ -15,7 +15,7 @@ sudo zypper install opi
 ```
 
 You can install things using it with: `sudo opi <name>`\
-And I will be using it further down with the `-n` flag to bypass and user confirmation prompts.
+And I will be using it further down with the `-n` flag to bypass user confirmation prompts.
 
 ## Root Password
 
@@ -26,6 +26,37 @@ So if the root password was never set, you can set it now:
 ```bash
 sudo passwd root
 ```
+
+## System Language & Locale
+
+I want my system to be in English.\
+But time, dates and currency should be in my local format (Swedish).
+
+I like to simply edit `/etc/locale.conf`:
+```
+LANG=en_US.UTF-8
+LANGUAGE=en_US:en
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC=sv_SE.UTF-8
+LC_TIME=sv_SE.UTF-8
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY=sv_SE.UTF-8
+LC_MESSAGES=en_US.UTF-8
+LC_PAPER=sv_SE.UTF-8
+LC_NAME=sv_SE.UTF-8
+LC_ADDRESS=sv_SE.UTF-8
+LC_TELEPHONE=sv_SE.UTF-8
+LC_MEASUREMENT=sv_SE.UTF-8
+LC_IDENTIFICATION=sv_SE.UTF-8
+LC_ALL=
+```
+
+So here's a one-liner that does it for us:
+```bash
+su -c 'echo -ne "LANG=en_US.UTF-8\nLANGUAGE=en_US:en\nLC_CTYPE=\"en_US.UTF-8\"\nLC_NUMERIC=sv_SE.UTF-8\nLC_TIME=sv_SE.UTF-8\nLC_COLLATE=\"en_US.UTF-8\"\nLC_MONETARY=sv_SE.UTF-8\nLC_MESSAGES=en_US.UTF-8\nLC_PAPER=sv_SE.UTF-8\nLC_NAME=sv_SE.UTF-8\nLC_ADDRESS=sv_SE.UTF-8\nLC_TELEPHONE=sv_SE.UTF-8\nLC_MEASUREMENT=sv_SE.UTF-8\nLC_IDENTIFICATION=sv_SE.UTF-8\nLC_ALL=" > /etc/locale.conf'
+```
+
+You'll need to reboot, or at least sign out and sign back in, for the changes to take effect.
 
 ## Auto Agree With Licenses
 
