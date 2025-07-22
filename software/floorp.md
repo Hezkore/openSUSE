@@ -3,6 +3,8 @@
 Floorp is just a modified version of Firefox, with additional features and customizations.\
 I mainly use it because it syncs with Firefox Sync and launches *a lot* faster than Firefox itself.
 
+Please see the "prefs.js" section below for some configuration changes that make it more usable.
+
 Floorp is not available in the package repositories, so we have two options.
 
 The simplest is via `opi`.\
