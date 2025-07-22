@@ -119,13 +119,12 @@ sudo zypper install nvidia-common-G06 nvidia-compute-G06 nvidia-compute-G06-32bi
 
 ## Media Codec Support
 
-The default media codecs are open-source and don't quite handle H.264 and H.265 all that well.\
-The proprietary ones are available in the `packman` repository, which is not enabled by default for legal reasons.
+The default media codecs are open-source and don't quite handle H.264 and H.265 all that well.
 
 You can check if H.264 codecs are supported by visiting this link:
 https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_200kbps_360p_60.0fps_h264.mp4
 
-The easiest way to install the proprietary media codecs is to simply install `opi`.\
+The easiest way to install the proprietary media codecs is via the `packman` repo, which we can access using `opi`:
 ```bash
 sudp opi -n codecs
 ```
