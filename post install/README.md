@@ -174,14 +174,18 @@ The preferred order of packing formats is:
 
 ### AppImage
 ---
-To setup AppImage support we don't really have to do anything, but AppImageLauncher makes things a lot easier by moving them to a designated directory and creating desktop entries for them.
+To setup AppImage support we don't really have to do anything.\
+But AppImageLauncher makes things a lot easier by moving AppImage applications to a designated directory, and creating desktop entries for us.
 
 Install the x86_64.rpm from their [GitHub releases page](https://github.com/TheAssassin/AppImageLauncher/releases).
 
-Once installed, I start the application and set the path for where the AppImage files are stored to:
+Once installed, I start the application, and set the path for where the AppImage files are stored to:
 ```bash
 ~/.applications
 ```
+
+Now when we won't have to make AppImage applications executable anymore.\
+And when we double-click an AppImage file, it will automatically move it to the designated directory and create a desktop entry for it.
 
 ### Flatpak
 ---
@@ -191,6 +195,9 @@ Install it with:
 ```bash
 sudo zypper install flatpak
 ```
+
+Installing Flatpak software is a bit of a mess, requiring some `com.foo.bar` name to be specified.\
+Running Flatpaks are equally messy, but luckily most of them get their own desktop entry, so I pray that you have a start menu or something.
 
 ## Node.js NPM
 
