@@ -111,7 +111,7 @@ sudo zypper install-new-recommends --repo repo-non-free
 ```
 Then reboot.
 
-Make sure `inxi -G` says something like "gpu: nvidia".\
+Make sure `inxi -G` says something like "gpu: nvidia" after the reboot.\
 If it doesn't, you can try to manually install everything we need.
 ```bash
 sudo zypper install nvidia-common-G06 nvidia-compute-G06 nvidia-compute-G06-32bit nvidia-compute-utils-G06 nvidia-gl-G06 nvidia-gl-G06-32bit nvidia-libXNVCtrl nvidia-modprobe nvidia-open-driver-G06-signed-kmp-default nvidia-persistenced nvidia-userspace-meta-G06 nvidia-video-G06 nvidia-video-G06-32bit
