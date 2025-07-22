@@ -169,8 +169,8 @@ The preferred order of packing formats is:
 
 1. **AppImage** - It's a self-contained executable that doesn't require any additional dependencies and starts quickly.
 2. **Flatpak** - It's a containerized format that requires the Flatpak runtime, and is generally slower than AppImage.
-3. **Snap** - It's the slowest of the three and has a lot of issues with permissions and sandboxing.\
-I don't even bother installing it.
+3. **Snap** - It's the slowest of the three and has a lot of issues with permissions and sandboxing.
+    - I don't even bother installing the application if it's a Snap
 
 ### AppImage
 ---
