@@ -163,7 +163,7 @@ xdg-mime default wine.desktop application/x-ms-dos-executable
 ## Universal Linux Packaging Formats
 
 While the preferred way of installing application is via the software repositories, sometimes I want to install applications that are not available there.\
-Adding a third-party repository is my main way of doing this, but sometimes the only option is to use a universal packaging format like Snap, Flatpak, or AppImage.
+Adding a third-party repository is my main way of doing this (and `opi` usually does this), but sometimes the only option is to use a universal packaging format like Snap, Flatpak, or AppImage.
 
 The preferred order of packing formats is:
 
