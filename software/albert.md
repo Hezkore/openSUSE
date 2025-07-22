@@ -16,4 +16,4 @@ I always enable at least:
 * Calculator
 * URL Handler
 * Web search
-    - <small>I enable some extra search engines like GitHub, and also change the "short" for some</small>
+	- <small>I enable some extra search engines like GitHub, and also change the "short" for some</small>
