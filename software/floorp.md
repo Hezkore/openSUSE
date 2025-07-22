@@ -57,13 +57,13 @@ xdg-settings set default-web-browser floorp.desktop
 ## prefs.js
 
 No matter how we installed Floorp, it is weirdly configured by default.\
-You can go through Floorp and try and find all of the things to change.\
+You can go through all Floorp settings, tons of menus, just to try and find all of the things to change.\
 Or we can simply add some things to `prefs.js` to instantly fix some of the things.
 
-
-First, start Floorp once, then close it and make sure Floorp isn't running somewhere else.\
+First, start Floorp once.\
+Then close it, and make sure Floorp isn't running somewhere else.\
 Then navigate to `~/.floorp/<profile directory>`.\
-`<profile directory>` is usually a bunch of numbers ending with `default-release`.\
+`<profile directory>` is a directory, usually named a bunch of numbers and ending with `default-release`.\
 Find the `prefs.js` file in that directory.
 
 Add this to the end of the `prefs.js` file:
@@ -87,3 +87,9 @@ user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 12);
 user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 2000);
 user_pref("general.smoothScroll.stopDecelerationWeighting", "0.4");
 ```
+
+There are some other annoying things that we can fix, like the workspace switcher.\
+But these are a bit more involved, so you can simple right click things on the toolbar and select "Remove from Toolbar" to get rid of them.
+
+I also recommend signing in by clicking the profile icon in the top right corner, and signing in with Firefox Sync.\
+This syncs all your plugins, like Bitwarden, uBlock Origin.
