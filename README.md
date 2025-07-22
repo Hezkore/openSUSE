@@ -1,4 +1,4 @@
-See the `Wiki` for documentation.
+See the [wiki](https://github.com/Hezkore/openSUSE/wiki) for documentation.
 
 You can clone the wiki repository to your local machine using the following command:
 ```bash
